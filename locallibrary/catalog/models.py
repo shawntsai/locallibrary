@@ -72,9 +72,6 @@ class BookInstance(models.Model):
 
     status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='m', help_text='Book availability')
 
-    def __str__():
-        return "{0}, {1}, {2}, {3}".format(book, status, due_back, id)
-
     class Meta:
         ordering = ["due_back"]
         
@@ -84,7 +81,7 @@ class BookInstance(models.Model):
         String for representing the Model object
         """
         # return '%s (%s)' % (self.id,self.book.title)
-        return '{0} ({1})'.format(self.id, self.book.title)
+        return '{0} ({1}) {2} {3}'.format(self.id, self.book.title, self.status, self.due_back)
 
 class Author(models.Model):
     """
@@ -107,6 +104,9 @@ class Author(models.Model):
         String for representing the Model object.
         """
         return '%s, %s' % (self.last_name, self.first_name)
+    
+    class Meta:
+        ordering = ['last_name']
 
 class Language(models.Model):
     """

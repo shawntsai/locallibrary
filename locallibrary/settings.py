@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'zen$uy)gc@sq8y(5(3&2epk5k#7j=b
 # DEBUG = True
 DEGUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "pacific-bastion-72568.herokuapp.com"]
 
 
 # Application definition
